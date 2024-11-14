@@ -6,17 +6,14 @@
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
       <a-marker preset="bob">
-        <!-- we use cors proxy to avoid cross-origin problems -->
-        <!--
-          ⚠️⚠️⚠️
-          https://arjs-cors-proxy.herokuapp.com/ is now offline, Heroku has dismissed all his free plans from November 2022.
-          You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
-          ⚠️⚠️⚠️
-        -->
+       <a-assets>
+          <a-asset-item id="a1" src="a1.glb"></a-asset-item>
+          </a-assets>
+          
         <a-entity
           position="0 0 0"
           scale="0.05 0.05 0.05"
-          gltf-model="model2.gltf"
+          gltf-model="#a1 animation-mixer"
         ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
